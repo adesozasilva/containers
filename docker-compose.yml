@@ -1,0 +1,14 @@
+version: '3.1'
+services:
+  db:
+    container_name: mysqldb
+    image: mysql:5.7.29
+    environment:
+      - MYSQL_DATABASE=controle_financeiro_dev
+      - MYSQL_USER=db_admin
+      - MYSQL_PASSWORD=dbAdminMaster
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+    ports:
+      - "3306:3306"
+    volumes:
+      - /home/anderson/temp/mysql:/var/lib/mysql
